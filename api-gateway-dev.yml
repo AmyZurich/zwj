@@ -1,0 +1,19 @@
+zuul:
+  routes:
+     #自定义路由 /myProduct/**  -> /product/**
+    myProduct: #这个名字可以随意定义
+      path: /myProduct/** #路由地址
+      serviceId: product
+      sensitiveHeaders: #敏感头的过滤（cookie) 设置为空就可以获取到cookie
+    #简洁写法
+#    product: /myProduct/**  #路由地址
+  #排除某些路由
+  ignored-patterns:
+#    - /product/product/listForOrder
+#    - /myProduct/product/listForOrder
+    - /**/product/listForOrder
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
