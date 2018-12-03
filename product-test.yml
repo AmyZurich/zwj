@@ -12,7 +12,7 @@ spring:
     show-sql: true
     #消息队列
   rabbitmq:
-    host: 192.168.3.233
+    host: 192.168.3.234
     username: guest
     password: guest
     port: 5672
